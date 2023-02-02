@@ -20,4 +20,25 @@ def divide_filter(image,x):
 def square_filter(image):
     return np.square(image)
 
+def meanStdDev(img):
+    """
+    # Calculate the mean and standard deviation of the pixel values
+    mean, std_dev = meanStdDev(gray)
+    
+    """
+    # Calculate the mean and standard deviation of the pixel values
+    mean = np.mean(img)
+    std_dev = np.std(img)
+    # Apply the standard deviation filter to the image
+    img_filtered = np.clip(gray - mean + std_dev, 0, 255).astype(np.uint8)
+    return img_filtered
+
+def padarray(img):
+    # Define the padding widths
+    pad_width = [(1, 1), (1, 1)]
+    # Pad the array using np.pad
+    padded_array = np.pad(img, pad_width, mode='constant', constant_values=0)
+    return padded_array
+
+
 
