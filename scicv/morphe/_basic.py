@@ -1,4 +1,5 @@
 import numpy as np 
+import cv2
 
 __all__ = ['dilation','erosion','black_hat','top_hat']
 
@@ -47,3 +48,24 @@ def top_hat(image, selem):
     result = dilation_result - erosion_result
     return result
 
+def imnoise(img):
+    # Generate random noise with a Gaussian distribution
+    noise = np.random.randn(*img.shape) * 20
+    # Add the noise to the image
+    noisy_img = np.clip(img + noise, 0, 255).astype(np.uint8)
+    return noisy_img
+        
+        
+
+
+# Load an image
+img = cv2.imread("image.jpg")
+
+# Generate random noise with a Gaussian distribution
+noise = np.random.randn(*img.shape) * 20
+
+# Add the noise to the image
+noisy_img = np.clip(img + noise, 0, 255).astype(np.uint8)
+
+# Save the noisy image
+cv2.imwrite("noisy_image.jpg", noisy_img)
