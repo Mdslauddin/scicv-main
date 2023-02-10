@@ -1,5 +1,18 @@
 
 """
+Image Arithmetic
+Add, subtract, multiply, and divide images
+
+Functions
+imabsdiff	Absolute difference of two images
+imadd	Add two images or add constant to image
+imapplymatrix	Linear combination of color channels
+imcomplement	Complement image
+imdivide	Divide one image into another or divide image by constant
+imlincomb	Linear combination of images
+immultiply	Multiply two images or multiply image by constant
+imsubtract	Subtract one image from another or subtract constant from image
+
 def imabsdiff(x,y):
     return np.abs(x,y)
 
