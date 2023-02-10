@@ -57,7 +57,7 @@ def imnoise(img):
         
         
 
-
+"""  
 # Load an image
 img = cv2.imread("image.jpg")
 
@@ -69,3 +69,5 @@ noisy_img = np.clip(img + noise, 0, 255).astype(np.uint8)
 
 # Save the noisy image
 cv2.imwrite("noisy_image.jpg", noisy_img)
+
+"""
